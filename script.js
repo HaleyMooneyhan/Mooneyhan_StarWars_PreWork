@@ -26,27 +26,17 @@ async function getFilms() {
 
     });
   } catch (error) {
-    console.error("Error fetching films:", error);
-  }
-}
+    console.error("Error fetching films:", error);}
+
+
+
+
+ }
+
 
 getFilms();
 
 
 
+  
 
-
-
-
-
-
-
-//data.results.map(film => {
-      //return `<div class="card">
-              //  <h2>${film.title}</h2>
-               // <p>Director: ${film.director}</p>
-              //  <p>Producer: ${film.producer}</p>
-              //  <p>Release Date: ${film.release_date}</p>
-            //  </div>`;
-    
-  // }).join("");
