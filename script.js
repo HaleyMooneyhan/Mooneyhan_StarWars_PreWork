@@ -3,7 +3,7 @@ let dashboard = document.getElementById("dashboard-link");
 let films = document.getElementById("films-link");
 let characters = document.getElementById("characters-link");
 var main = document.querySelector("main");
-var dashdescription = document.getElementById("dashboard-description");
+var dashdescription = document.querySelector("#dashboard-description");
 
 
 
@@ -17,7 +17,7 @@ async function getFilms() {
     }
     let data = await response.json();
     
-
+    dashdescription.innerHTML ="hello"
     data.results.forEach(film => {
       var dashdescription = document.getElementById("dashboard-description")
       let card = document.createElement("div");
