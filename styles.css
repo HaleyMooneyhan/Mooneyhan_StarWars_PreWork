@@ -1,0 +1,20 @@
+#container {
+    display: flex;
+    width: 100vw;
+}
+
+    #nav-col {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #3a3cc5;
+    }
+
+    #dashboard{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #3a3cc5;
+    }
