@@ -14,16 +14,15 @@ async function getFilms() {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    let data = await response.json();
+    let films = await response.json();
     
     
-    data.results.forEach(film => {
-      let card = document.createElement("div");
-      card.className = "card";  
+    films.results.forEach(film => {
+      let card = document.createElement("div");  
       let title = document.createElement("h2");    
       title.textContent = film.title;
       let director = document.createElement("p");   
-    director.textContent = `Director: ${film.director}`;
+      director.textContent = `Director: ${film.director}`;
       let producer = document.createElement("p");
       producer.textContent = `Producer: ${film.producer}`;
       let releaseDate = document.createElement("p");
@@ -34,6 +33,8 @@ async function getFilms() {
       card.appendChild(releaseDate);
       main.appendChild(card);
     
+
+      //SET A TIMOUT TO REMOVE THE CARD AFTER 5 SECONDS. IF I HAD MORE TIME I WOULD HAVE MODIFIED THE FUNCTION TO REMOVE THE CARD WHEN CLICKING ON THE CHARACTERS BUTTON.
       setTimeout(() => {
         card.style.display = "none";
       }, 5000);
@@ -69,7 +70,6 @@ async function getCharacters() {
 
     chars.results.forEach(character => {
       let card = document.createElement("div");
-      card.className = "card";  
       let name = document.createElement("h2");    
       name.textContent = character.name;
       let gender = document.createElement("p");   
@@ -81,6 +81,8 @@ async function getCharacters() {
       card.appendChild(birthYear);
       main.appendChild(card);
 
+
+      // AGAIN, SET A TIMOUT TO REMOVE THE CARD AFTER 5 SECONDS. IF I HAD MORE TIME I WOULD HAVE MODIFIED THE FUNCTION TO REMOVE THE CARD WHEN CLICKING ON THE FILMS BUTTON.
       setTimeout(() => {
         card.style.display = "none";
       }, 5000);  
