@@ -11,8 +11,8 @@ body {
 
 /* COMPONENT STYLES */
 .buttons {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #080808;
     border: 2px solid #ffffff;
     border-radius: 5px;
     padding: 10px 20px;
