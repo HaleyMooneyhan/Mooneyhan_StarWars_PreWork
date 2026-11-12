@@ -34,7 +34,9 @@ async function getFilms() {
       card.appendChild(releaseDate);
       main.appendChild(card);
     
-      
+      setTimeout(() => {
+        card.style.display = "none";
+      }, 5000);
 
 
     });
@@ -78,6 +80,10 @@ async function getCharacters() {
       card.appendChild(gender);
       card.appendChild(birthYear);
       main.appendChild(card);
+
+      setTimeout(() => {
+        card.style.display = "none";
+      }, 5000);  
     });
   } catch (error) {
     console.error("Error fetching characters:", error);
