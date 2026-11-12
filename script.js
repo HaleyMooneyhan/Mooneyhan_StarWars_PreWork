@@ -12,37 +12,37 @@ async function getFilms() {
   try {
     let response = await fetch("https://swapi.dev/api/films/");
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`errorstatus: ${response.status}`);
     }
     let films = await response.json();
     
     
     films.results.forEach(film => {
-      let card = document.createElement("div");  
+      let div = document.createElement("div");  
       let title = document.createElement("h2");    
       title.textContent = film.title;
       let director = document.createElement("p");   
-      director.textContent = `Director: ${film.director}`;
+      director.textContent = `The Director: ${film.director}`;
       let producer = document.createElement("p");
-      producer.textContent = `Producer: ${film.producer}`;
+      producer.textContent = `The Producer: ${film.producer}`;
       let releaseDate = document.createElement("p");
-      releaseDate.textContent = `Release Date: ${film.release_date}`;
-      card.appendChild(title);
-      card.appendChild(director);
-      card.appendChild(producer);
-      card.appendChild(releaseDate);
-      main.appendChild(card);
+      releaseDate.textContent = `The Release Date: ${film.release_date}`;
+      div.appendChild(title);
+      div.appendChild(director);
+      div.appendChild(producer);
+      div.appendChild(releaseDate);
+      main.appendChild(div);
     
 
-      //SET A TIMOUT TO REMOVE THE CARD AFTER 5 SECONDS. IF I HAD MORE TIME I WOULD HAVE MODIFIED THE FUNCTION TO REMOVE THE CARD WHEN CLICKING ON THE CHARACTERS BUTTON.
+      //SET A TIMOUT TO REMOVE THE DIV AFTER 5 SECONDS. IF I HAD MORE TIME I WOULD HAVE MODIFIED THE FUNCTION TO REMOVE THE CARD WHEN CLICKING ON THE CHARACTERS BUTTON.
       setTimeout(() => {
-        card.style.display = "none";
+        div.style.display = "none";
       }, 5000);
 
 
     });
   } catch (error) {
-    console.error("Error fetching films:", error);}
+    console.error("The Was an Error fetching the films:", error);}
  
    
 
@@ -69,22 +69,22 @@ async function getCharacters() {
      let chars = await response.json(); 
 
     chars.results.forEach(character => {
-      let card = document.createElement("div");
+      let div = document.createElement("div");
       let name = document.createElement("h2");    
-      name.textContent = character.name;
+      name.textContent = `Character: ${character.name}`;
       let gender = document.createElement("p");   
       gender.textContent = `Gender: ${character.gender}`;
       let birthYear = document.createElement("p");
       birthYear.textContent = `Birth Year: ${character.birth_year}`;
-      card.appendChild(name);
-      card.appendChild(gender);
-      card.appendChild(birthYear);
-      main.appendChild(card);
+      div.appendChild(name);
+      div.appendChild(gender);
+      div.appendChild(birthYear);
+      main.appendChild(div);
 
 
-      // AGAIN, SET A TIMOUT TO REMOVE THE CARD AFTER 5 SECONDS. IF I HAD MORE TIME I WOULD HAVE MODIFIED THE FUNCTION TO REMOVE THE CARD WHEN CLICKING ON THE FILMS BUTTON.
+      // AGAIN, SET A TIMOUT TO REMOVE THE DIV AFTER 5 SECONDS. IF I HAD MORE TIME I WOULD HAVE MODIFIED THE FUNCTION TO REMOVE THE DIV WHEN CLICKING ON THE FILMS BUTTON.
       setTimeout(() => {
-        card.style.display = "none";
+        div.style.display = "none";
       }, 5000);  
     });
   } catch (error) {
