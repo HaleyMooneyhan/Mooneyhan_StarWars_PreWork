@@ -1,9 +1,8 @@
 let body=document.querySelector("body");
-let dashboard = document.getElementById("dashboard-link");
 let films = document.getElementById("films-link");
 let characters = document.getElementById("characters-link");
 var main = document.querySelector("main");
-var dashdescription = document.querySelector("#dashboard-description");
+
 
 
 
@@ -17,9 +16,8 @@ async function getFilms() {
     }
     let data = await response.json();
     
-    dashdescription.innerHTML ="hello"
+    
     data.results.forEach(film => {
-      var dashdescription = document.getElementById("dashboard-description")
       let card = document.createElement("div");
       card.className = "card";  
       let title = document.createElement("h2");    
@@ -30,13 +28,10 @@ async function getFilms() {
       producer.textContent = `Producer: ${film.producer}`;
       let releaseDate = document.createElement("p");
       releaseDate.textContent = `Release Date: ${film.release_date}`;
-      let filmsLink2 = document.createElement("a");
-      filmsLink2.innerHTML= "Back To Films";
       card.appendChild(title);
       card.appendChild(director);
       card.appendChild(producer);
       card.appendChild(releaseDate);
-      card.appendChild(filmsLink2);
       main.appendChild(card);
     
       
